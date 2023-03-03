@@ -4,7 +4,7 @@ from django.core.validators import MaxLengthValidator,MinLengthValidator
 from django.core.exceptions import ValidationError
 # Create your models here.
 def cin_length(v):
-    if len(v)!=8:
+    if len(str(v))!=8:
         raise ValidationError("Your CIN must have 8 chara!")
     return v
 

@@ -1,0 +1,26 @@
+<table border=1>
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Image</th>
+        <th>Category</th>
+        <th>Etat</th>
+        <th>Nbe Participation</th>
+        <th>Date Evt</th>
+        <th>Details</th>
+        <th>Details Generic</th>
+    </tr>
+    {% for ee in e %}
+    <tr>
+        <td>{{ee.title}}</td>
+        <td>{{ee.description}}</td>
+        <td>{{ee.image}}</td>
+        <td>{{ee.category}}</td>
+        <td>{{ee.state}}</td>
+        <td>{{ee.nbe_participant}}</td>
+        <td>{{ee.event_date}}</td>
+        <td><a href="{% url 'D' ee.title %}">Detail</a></td>
+        <td><a href="{% url 'DD' ee.id %}">Detail</a></td>
+    </tr>
+    {% endfor %}
+</table>

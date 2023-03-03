@@ -1,0 +1,6 @@
+<h>Ajout d'un evènement</h>
+<form method="post" action="{% url  'Add' %}" enctype="multipart/form-data">
+    {% csrf_token %} 
+    {{form.as_p }}
+    <input type="submit" value="Ajout">
+</form>

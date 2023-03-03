@@ -1,0 +1,6 @@
+<form method="post" action="">
+    {% csrf_token %}
+    {{form.username}}
+    {{form.password}}
+    <button class="btn btn-primary" type="submit">Se connecter</button>
+</form>
