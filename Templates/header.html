@@ -1,0 +1,29 @@
+{% load static %}
+{% block header %}
+<!-- Just an image -->
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="{% static '/ESPRITTTT.jpg' %}" width="30" height="30" class="d-inline-block align-top" alt="">
+      </a>
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'Aff'%}">Affiche</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'Ajout'%}">Ajout</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'Add'%}">Add</a>
+    </li>
+    <li class="nav-item">
+        {% if user.is_authenticated%}
+        <p> Welcome, {{user.username}}</p>
+        <form action="{% url 'logout'%}">
+            <input type="submit" value="Logout">
+        </form>
+{% endif %}
+    </li>
+  </ul>
+</nav>
+  {% endblock %}

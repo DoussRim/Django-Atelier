@@ -10,8 +10,14 @@ urlpatterns = [
     path('List/',ListEvtGeneric.as_view(),name="Aff"),
     path('Detail/<str:title>',Detail,name='D'),
     path('Ajout/',AjoutEvt,name="Add"),
-    path('AjoutGen/',Ajout.as_view()),
+    path('AjoutGen/',Ajout.as_view(),name="Ajout"),
     path('DetailGen/<int:pk>',DetailGeneric.as_view(),name="DD"),
     path('login/',LoginView.as_view(template_name='login.html'),name="login"),
-    path('logout/',LogoutView.as_view())
+    path('logout/',LogoutView.as_view(),name='logout'),
+    path('Part/<int:evt_id>',Participate,name='Participate'),
+    path('Cancel/<int:id>',cancel,name='Cancel'),
+    path('Delete/<int:pk>',Delete.as_view(),name="Del"),
+    path('Update/<int:pk>',Update.as_view(),name="Up"),
+
+
 ]

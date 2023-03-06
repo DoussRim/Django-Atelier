@@ -1,3 +1,5 @@
+{% extends 'base.html' %}
+{% block content%}
 <table border=1>
     <tr>
         <th>Title</th>
@@ -9,6 +11,9 @@
         <th>Date Evt</th>
         <th>Details</th>
         <th>Details Generic</th>
+        <th>Delete</th>
+        <th>Participate</th>
+        <th>Cancel Participation </th>
     </tr>
     {% for ee in e %}
     <tr>
@@ -21,6 +26,12 @@
         <td>{{ee.event_date}}</td>
         <td><a href="{% url 'D' ee.title %}">Detail</a></td>
         <td><a href="{% url 'DD' ee.id %}">Detail</a></td>
+        <td><a href="{% url 'Del' ee.id %}">Delete</a></td>
+        <td><a href="{% url 'Up' ee.id %}">Update</a></td>
+        <td><a href="{% url 'Participate' evt_id=ee.id %}">Participate</a></td>
+        <td><a href="{% url 'Cancel' ee.id %}">Cancel Participate</a></td>
+
     </tr>
     {% endfor %}
 </table>
+{%endblock%}
